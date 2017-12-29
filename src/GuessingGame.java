@@ -34,10 +34,14 @@ public class GuessingGame extends JFrame {
 			message = guess + " was too low. Guess again!";
 			lblOutput.setText(message);
 		}
-		else {
+		else {	// guess correctly
 			message = guess + " was right! You win! let's play again";
 			lblOutput.setText(message);
+			newGame();
 		}
+		
+		txtGuess.requestFocus();
+		txtGuess.selectAll();
 	}
 	
 	public void newGame() {		// new random number 1..100
@@ -45,6 +49,7 @@ public class GuessingGame extends JFrame {
 	}
 	
 	public GuessingGame() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 		
 		JLabel lblHighLowGuessing = new JLabel("jTam's High Low Guessing Game");
@@ -64,6 +69,12 @@ public class GuessingGame extends JFrame {
 		lblGuessANumber.setHorizontalAlignment(SwingConstants.RIGHT);
 		
 		txtGuess = new JTextField();
+		txtGuess.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				checkGuess();
+			}
+		});
+		txtGuess.setHorizontalAlignment(SwingConstants.CENTER);
 		txtGuess.setBounds(278, 10, 85, 19);
 		panel.add(txtGuess);
 		txtGuess.setColumns(10);
