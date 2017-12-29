@@ -8,7 +8,9 @@ import java.awt.Font;
 import javax.swing.JPanel;
 
 public class GuessingGame extends JFrame {
-	private JTextField txtGuess;
+	private JTextField txtGuess;	// text field for the user's guess
+	private JLabel lblOutput;		// label for too high/low output
+	
 	public GuessingGame() {
 		getContentPane().setLayout(null);
 		
@@ -37,7 +39,7 @@ public class GuessingGame extends JFrame {
 		btnGuess.setBounds(166, 156, 117, 25);
 		getContentPane().add(btnGuess);
 		
-		JLabel lblOutput = new JLabel("Enter a number above and click Guess!");
+		lblOutput = new JLabel("Enter a number above and click Guess!");
 		lblOutput.setHorizontalAlignment(SwingConstants.CENTER);
 		lblOutput.setBounds(73, 212, 302, 25);
 		getContentPane().add(lblOutput);
