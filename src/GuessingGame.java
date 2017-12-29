@@ -8,18 +8,18 @@ import java.awt.Font;
 import javax.swing.JPanel;
 
 public class GuessingGame extends JFrame {
-	private JTextField textField;
+	private JTextField txtGuess;
 	public GuessingGame() {
 		getContentPane().setLayout(null);
 		
 		JLabel lblHighLowGuessing = new JLabel("jTam's High Low Guessing Game");
 		lblHighLowGuessing.setFont(new Font("Dialog", Font.BOLD, 16));
-		lblHighLowGuessing.setBounds(0, 33, 448, 25);
+		lblHighLowGuessing.setBounds(0, 31, 448, 25);
 		lblHighLowGuessing.setHorizontalAlignment(SwingConstants.CENTER);
 		getContentPane().add(lblHighLowGuessing);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(37, 91, 374, 38);
+		panel.setBounds(37, 87, 374, 38);
 		getContentPane().add(panel);
 		panel.setLayout(null);
 		
@@ -28,19 +28,19 @@ public class GuessingGame extends JFrame {
 		panel.add(lblGuessANumber);
 		lblGuessANumber.setHorizontalAlignment(SwingConstants.RIGHT);
 		
-		textField = new JTextField();
-		textField.setBounds(278, 10, 85, 19);
-		panel.add(textField);
-		textField.setColumns(10);
+		txtGuess = new JTextField();
+		txtGuess.setBounds(278, 10, 85, 19);
+		panel.add(txtGuess);
+		txtGuess.setColumns(10);
 		
 		JButton btnGuess = new JButton("Guess!");
-		btnGuess.setBounds(166, 162, 117, 25);
+		btnGuess.setBounds(166, 156, 117, 25);
 		getContentPane().add(btnGuess);
 		
-		JLabel lblNewLabel = new JLabel("Enter a number above and click Guess!");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(73, 220, 302, 15);
-		getContentPane().add(lblNewLabel);
+		JLabel lblOutput = new JLabel("Enter a number above and click Guess!");
+		lblOutput.setHorizontalAlignment(SwingConstants.CENTER);
+		lblOutput.setBounds(73, 212, 302, 25);
+		getContentPane().add(lblOutput);
 	}
 
 	public static void main(String[] args) {
