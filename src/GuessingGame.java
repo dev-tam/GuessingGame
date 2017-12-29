@@ -1,11 +1,15 @@
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.BorderLayout;
+import java.awt.Dimension;
+
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JPanel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class GuessingGame extends JFrame {
 	private JTextField txtGuess;	// text field for the user's guess
@@ -65,6 +69,11 @@ public class GuessingGame extends JFrame {
 		txtGuess.setColumns(10);
 		
 		JButton btnGuess = new JButton("Guess!");
+		btnGuess.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				checkGuess();
+			}
+		});
 		btnGuess.setBounds(166, 156, 117, 25);
 		getContentPane().add(btnGuess);
 		
@@ -75,7 +84,11 @@ public class GuessingGame extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		GuessingGame theGame = new GuessingGame();
+		theGame.newGame();
+		theGame.setSize(new Dimension(430, 330));
+		theGame.setVisible(true);
 
 	}
 }
